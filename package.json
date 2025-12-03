@@ -1,0 +1,15 @@
+{
+  "name": "unitel",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "tests:chrome": "playwright test --config=playwright.config.ts --project=chromium" },
+  "dependencies": {
+    "@playwright/test": "^1.57.0",
+    "prettier": "^3.7.4"
+  }
+}
