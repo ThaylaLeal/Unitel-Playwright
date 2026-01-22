@@ -40,7 +40,7 @@ test.describe('Unitel Navigation Bar', () => {
   await expect(page).toHaveURL(/contactos\.php$/); 
 });
 
-  test('capacidade de acessos de links-Particulares', async ({ page }) => {
+  test.only('capacidade de acessos de links-Particulares', async ({ page }) => {
   await page.goto('https://www.unitel.st/');
 
   const menu = page.locator('a.dropdown-toggle', { hasText: 'Particulares' });
@@ -123,7 +123,7 @@ test('Quem Somos — conteúdo e botões de compartilhamento existem e clicávei
   const tituloCount = await titulo.count();
 
   // Verificar os botões (Facebook, Instagram, Twitter, LinkedIn)
-  const redes = page.locator('a[href*="facebook"], a[href*="instagram"], a[href*="twitter"], a[href*="linkedin"]');
+  const redes = page.locator('a:has(.fa.fa-facebook.fa-stack-1x), a:has(.fa.fa-twitter.fa-stack-1x), a:has(.fa.fa-envelope-o.fa-stack-1x)');
   const redesCount = await redes.count();
   
 
@@ -132,9 +132,6 @@ test('Quem Somos — conteúdo e botões de compartilhamento existem e clicávei
     await redes.nth(i).evaluate((el) => (el as HTMLElement).click()); // executa o click via JS sem esperar visibilidade
   }
 
-  // Voltar para a home ao final
-  await page.goto('https://www.unitel.st/');
 });
-
 
 });

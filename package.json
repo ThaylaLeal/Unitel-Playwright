@@ -7,9 +7,15 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "tests:chrome": "playwright test --config=playwright.config.ts --project=chromium" },
+    "tests:chrome": "playwright test --config=playwright.config.ts --project=chromium --headed", 
+    "tests:webkit": "playwright test --config=playwright.config.ts --project=webkit"
+
+  },
   "dependencies": {
     "@playwright/test": "^1.57.0",
     "prettier": "^3.7.4"
+  },
+  "devDependencies": {
+    "allure-playwright": "^3.4.3"
   }
 }
